@@ -10,26 +10,26 @@ Thiago Nascimento : thiagoduna0@gmail.com<br>
 Guilherme Bleidão : guilhermenbleidao@gmail.com<br>
 <br>
 
-### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
+### 2.INTRODUÇÃO E MOTIVAÇÃO
+<br>
 Este documento contém a especificação do projeto do banco de dados Moveis Eletro 
 <br>e motivação da escolha realizada. <br>
 
-> A empresa "Devcom Projetos" visa colaborar com desenvolvimento de projetos para uma sociedade melhor. Sabendo-se dos desafios para gerenciar projetos dentro de uma empresa e visando unir as informações relativas a funcionários, departamentos e projetos em um mesmo local, ficamos motivados com o desenvolvimento deste sistema. O Sistema "Devcom" tem como objetivo gerenciar todas as informações ao desenvolvimento das atividades de projetos em diversas localidades do país. Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
+> O sistema da loja "Móveis e Eletro” almeja auxiliar a organização das atividades diárias da loja e abrir as portas da empresa para o mercado digital (compras feitas pela internet). Dessa forma, os clientes terão acesso a compra de produtos sem ter que se deslocar até uma loja física recebendo o produto na comodidade de sua casa. O sistema servirá como facilitador para as atividades exercidas pelos funcionários da loja física, unificando as operações em um só lugar.
  
+<hr>
 
 ### 3.MINI-MUNDO<br>
+<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+> A loja “Móveis e Eletro” atualmente comercializa móveis e eletrodomésticos e trabalha com o objetivo de proporcionar serviços àqueles que sonham em ter a casa mobiliada com produtos de qualidade e de boa procedência. A loja deseja obter um sistema que auxilie seus processos internos, tais como o processo de vendas e entregas. 
+A loja trabalha com dois tipos de venda: por meio de vendas físicas ou por meio de compras online. A cobertura de entregas da loja é nacional. O sistema deve possuir carrinhos de compra. Para realizar uma compra, os clientes devem informar seu nome, CPF, telefone, email e endereço. O sistema deve enviar emails para seus clientes sempre que acontecerem promoções, visando manter seu público atualizado. O sistema deve registrar os horários de entrada e saída de cada vendedor. Para conseguir cumprir os prazos de entrega a empresa possui frota própria de entregadores. O prazo de entrega varia dependendo da localidade do comprador. A loja necessita que os produtos sejam contabilizados. Sempre que os produtos estiverem próximos de se esgotar, um alerta deve ser enviado, bem como os fornecedores devem ser contactados. Assim que a encomenda for despachada, o entregador deve gerar um código de rastreio para facilitar seu acompanhamento. A loja tem apoio de um software externo, onde mostra a visualização dos móveis selecionados pelo cliente no seu cômodo desejado. 
+O pagamento é feito por meio de cédulas, PIX ou carteiras virtuais (PicPay e PayPal), além disso, os vendedores podem aplicar desconto de 15% se o cliente comprar 3 itens ou mais. O vendedor recebe uma comissão de 5% em cima da quantidade total vendida por ele no mês. É importante que seja possível acessar os seguintes relatórios: O total de vendas por período especificado, o valor de venda realizado por cada vendedor, o banco de horas de cada funcionário e a rota de entrega dos entregadores.
 
-> O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes. 
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-
+Criação da interface para identificar possíveis informações a serem armazenadas ou descartadas usando Balsamiq.
 ![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/TelaBalsamiq.png?raw=true "Title")
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Moveis e Eletro](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/Balsamiq.pdf?raw=true "Empresa Devcom")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
@@ -88,112 +88,6 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
-        
-        create table tipos_logradouro (
-        id int primary key generated always as identity,
-        tipo varchar(255) not null
-        );
-
-        create table estados (
-        id int primary key generated always as identity,
-        nome varchar(255) not null
-        );
-
-        create table municipios (
-        id int primary key generated always as identity,
-        nome varchar(255) not null,
-        estado_id int,
-        constraint fk_estados_municipios
-        foreign key (estado_id)
-        references estados(id)
-        );
-
-        create table enderecos (
-        id int primary key generated always as identity,
-        tipo_logradouro_id int,
-        logradouro varchar(255),
-        municipio_id int,
-        cep varchar(10),
-        constraint fk_tipos_logradouro_enderecos
-        foreign key (tipo_logradouro_id)
-        references tipos_logradouro(id),
-        constraint fk_municipios_enderecos
-        foreign key (municipio_id)
-        references municipios(id)
-        );
-
-        create table pessoas (
-        id int primary key generated always as identity,
-        nome varchar(255) not null,
-        cpf varchar(11) not null,
-        data_nascimento date not  null,
-        email varchar(255) not null,
-        endereco_id int not null,
-        constraint fk_enderecos_pessoas
-        foreign key (endereco_id)
-        references enderecos(id)
-        );
-
-        create table categorias_produto (
-        id int primary key generated always as identity,
-        categoria varchar(255)
-        );
-
-        create table produtos (
-        id int primary key generated always as identity,
-        nome varchar(255) not null,
-        descricao varchar(255) not null,
-        preco numeric not null,
-        categoria_id int,
-        quantidade int not null,
-        constraint fk_categorias_produto_produto
-        foreign key (categoria_id)
-        references categorias_produto(id)
-        );
-
-
-        create table promocoes (
-        id int primary key generated always as identity,
-        nome varchar(255) not null,
-        descricao varchar(255) not null,
-        data_inicio date not null,
-        data_fim date,
-        desconto numeric not null
-        );
-
-        create table promocoes_produtos (
-        promocao_id int not null,
-        produto_id int not null,
-        constraint fk_promocoes_promocoes_produtos
-        foreign key (promocao_id)
-        references promocoes(id),
-        constraint fk_produtos_promocoes_produtos
-        foreign key (produto_id)
-        references produtos(id)
-        );
-
-        create table pagamentos (
-        id int primary key generated always as identity,
-        chave_pix varchar(255) not null,
-        total numeric not null
-        );
-
-        create table vendas (
-        id int primary key generated always as identity,
-        pessoa_id int not null,
-        data date not null,
-        pagamento_id int not null,
-        endereco_id int not null,
-        constraint fk_pessoas_vendas
-        foreign key (pessoa_id)
-        references pessoas(id),
-        constraint fk_pagamentos_vendas
-        foreign key (pagamento_id)
-        references pagamentos(id),
-        constraint fk_enderecos_vendas
-        foreign key (endereco_id)
-        references enderecos(id)
-        );
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
