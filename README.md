@@ -89,6 +89,111 @@ Criação da interface para identificar possíveis informações a serem armazen
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
         
+        create table tipos_logradouro (
+        id int primary key generated always as identity,
+        tipo varchar(255) not null
+        );
+
+        create table estados (
+        id int primary key generated always as identity,
+        nome varchar(255) not null
+        );
+
+        create table municipios (
+        id int primary key generated always as identity,
+        nome varchar(255) not null,
+        estado_id int,
+        constraint fk_estados_municipios
+        foreign key (estado_id)
+        references estados(id)
+        );
+
+        create table enderecos (
+        id int primary key generated always as identity,
+        tipo_logradouro_id int,
+        logradouro varchar(255),
+        municipio_id int,
+        cep varchar(10),
+        constraint fk_tipos_logradouro_enderecos
+        foreign key (tipo_logradouro_id)
+        references tipos_logradouro(id),
+        constraint fk_municipios_enderecos
+        foreign key (municipio_id)
+        references municipios(id)
+        );
+
+        create table pessoas (
+        id int primary key generated always as identity,
+        nome varchar(255) not null,
+        cpf varchar(11) not null,
+        data_nascimento date not  null,
+        email varchar(255) not null,
+        endereco_id int not null,
+        constraint fk_enderecos_pessoas
+        foreign key (endereco_id)
+        references enderecos(id)
+        );
+
+        create table categorias_produto (
+        id int primary key generated always as identity,
+        categoria varchar(255)
+        );
+
+        create table produtos (
+        id int primary key generated always as identity,
+        nome varchar(255) not null,
+        descricao varchar(255) not null,
+        preco numeric not null,
+        categoria_id int,
+        quantidade int not null,
+        constraint fk_categorias_produto_produto
+        foreign key (categoria_id)
+        references categorias_produto(id)
+        );
+
+
+        create table promocoes (
+        id int primary key generated always as identity,
+        nome varchar(255) not null,
+        descricao varchar(255) not null,
+        data_inicio date not null,
+        data_fim date,
+        desconto numeric not null
+        );
+
+        create table promocoes_produtos (
+        promocao_id int not null,
+        produto_id int not null,
+        constraint fk_promocoes_promocoes_produtos
+        foreign key (promocao_id)
+        references promocoes(id),
+        constraint fk_produtos_promocoes_produtos
+        foreign key (produto_id)
+        references produtos(id)
+        );
+
+        create table pagamentos (
+        id int primary key generated always as identity,
+        chave_pix varchar(255) not null,
+        total numeric not null
+        );
+
+        create table vendas (
+        id int primary key generated always as identity,
+        pessoa_id int not null,
+        data date not null,
+        pagamento_id int not null,
+        endereco_id int not null,
+        constraint fk_pessoas_vendas
+        foreign key (pessoa_id)
+        references pessoas(id),
+        constraint fk_pagamentos_vendas
+        foreign key (pagamento_id)
+        references pagamentos(id),
+        constraint fk_enderecos_vendas
+        foreign key (endereco_id)
+        references enderecos(id)
+        );
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
