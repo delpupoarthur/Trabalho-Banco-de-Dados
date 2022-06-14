@@ -58,8 +58,8 @@ Criação da interface para identificar possíveis informações a serem armazen
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: [Matheus Aguiar e Douglas Nunes]
+    [Grupo02]: [Cléber Salustiano e Carlos Breno]
 
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
@@ -80,7 +80,7 @@ Criação da interface para identificar possíveis informações a serem armazen
         id int primary key generated always as identity,
         tipo varchar(255) not null
         );
-
+        
         create table estados (
         id int primary key generated always as identity,
         nome varchar(255) not null
