@@ -33,8 +33,6 @@ Criação da interface para identificar possíveis informações a serem armazen
 ![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/TelaBalsamiq.png?raw=true "Title")
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Moveis e Eletro](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/Balsamiq.pdf?raw=true "Empresa Devcom")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
  A Empresa Móveis e Eletro precisa inicialmente dos seguintes relatórios:
 * Relatório que mostre cada cliente, produtos que comprou.
@@ -62,12 +60,56 @@ Criação da interface para identificar possíveis informações a serem armazen
     [Grupo02]: [Cléber Salustiano e Carlos Breno]
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
+    PESSOA: Tabela que armazena as informações relativas ao cliente
+    id: Campo que armazena o código de identificação do cliente da empresa.
+    nome: Campo que armazena o nome do cliente da emoresa.
+    cpf: Campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.
+    data_nasc: Campo que armazena a data de nascimento do cliente da empresa.
+    email: Campo que armazena o email do cliente da emrpesa.
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
+    VENDA: Tabela que armazena as informações relativas a venda.
+    id: Campo que armazena o código de identificação da venda efetuada.
+    data: Campo que armazena a data que foi realizada a venda.
+    
+    PAGAMENTO: Tabela que armazena as informações sobre o pagamento do cliente.
+    id: Campo que armazena o código de identificação do pagamento efetuado.
+    chave_pix: Campo que armazena a chave de pagamento realizado pelo cliente.
+    total:  Campo que armazena o valor total do pagamento feito pelo cliente.
+    
+    PRODUTO: Tabela que armazena as informações sobre produtos em estoque na loja.
+    id:  Campo que armazena o código de identificação do produto.
+    nome:  Campo que armazena o nome do produto.
+    desc:  Campo que armazena a descrição do produto.
+    preco: Campo que armazena o preço individual do produto.
+    quantidade:  Campo que armazena a quantidade total do produto em estoque.
+    
+    PROMOCAO: Tabela que armazena as informações sobre as promoções dos produtos.
+    id:  Campo que armazena o código de identificação de promoções.
+    descricao:  Campo que armazena a descrição da promoção.
+    data_inicio:  Campo que armazena a data de início da promoção.
+    data_fim:  Campo que armazena a data que a promoção termina.
+    desconto:  Campo que armazena a porcentagem de desconto.
+    
+    CATEGORIA: Tabela que armazena as informações sobre as categorias dos produtos.
+    id:  Campo que armazena o código de identificação das categorias dos produtos.
+    categoria:  Campo que armazena o nome da categoria.
+    
+    ENDERECO: Tabela que armazena as informações sobre o endereço do cliente.
+    id:  Campo que armazena o código de identificação sobre o endereço do cliente.
+    logradouro:  Campo que armazena o logradouro do endereço do cliente.
+    cep:  Campo que armazena o cep do endereço do cliente.
+    
+    TIPO_LOGRADOURO: Tabela que armazena as informações sobre os tipos de logradouro.
+    id:  Campo que armazena o código de identificação do tipo de logradouro.
+    nome:  Campo que armazena o nome do tipo do logradouro.
+    
+    MUNICIPIO: Tabela que armazena as informações sobre os municios.
+    id:  Campo que armazena o código de identificação do munícipio.
+    nome:  Campo que armazena o nome do município.
+    
+    ESTADO:  Tabela que armazena as informações sobre os estados.
+    id:  Campo que armazena o código de identificação do estado.
+    nome:  Campo que armazena o nome do estado.
 
 ### 6	MODELO LÓGICO<br>
 ![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/Logico.png?raw=true "Modelo Logico")
