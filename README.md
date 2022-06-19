@@ -230,40 +230,40 @@ Criação da interface para identificar possíveis informações a serem armazen
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
     VENDAS
-    ![Tabela VENDAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas.png?raw=true "Tabela VENDAS")
+![Tabela VENDAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas.png?raw=true "Tabela VENDAS")
 
     PRODUTOS_VENDAS
-    ![Tabela PRODUTOS_VENDAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_vendas.png?raw=true "Tabela PRODUTOS_VENDAS")
+![Tabela PRODUTOS_VENDAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_vendas.png?raw=true "Tabela PRODUTOS_VENDAS")
 
     PRODUTOS
-    ![Tabela PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos.png?raw=true "Tabela PRODUTOS")
+![Tabela PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos.png?raw=true "Tabela PRODUTOS")
 
     PESSOAS
-    ![Tabela PESSOAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas.png?raw=true "Tabela PESSOAS")
+![Tabela PESSOAS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas.png?raw=true "Tabela PESSOAS")
 
     ENDERECOS
-    ![Tabela ENDERECOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/enderecos.png?raw=true "Tabela ENDERECOS")
+![Tabela ENDERECOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/enderecos.png?raw=true "Tabela ENDERECOS")
 
     TIPOS_LOGRADOURO
-    ![Tabela TIPOS_LOGRADOURO](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/tipos_logradouro.png?raw=true "Tabela TIPOS_LOGRADOURO")
+![Tabela TIPOS_LOGRADOURO](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/tipos_logradouro.png?raw=true "Tabela TIPOS_LOGRADOURO")
 
     MUNICIPIOS
-    ![Tabela MUNICIPIOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/municipios.png?raw=true "Tabela MUNICIPIOS")
+![Tabela MUNICIPIOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/municipios.png?raw=true "Tabela MUNICIPIOS")
 
     ESTADOS
-    ![Tabela ESTADOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/estados.png?raw=true "Tabela ESTADOS")
+![Tabela ESTADOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/estados.png?raw=true "Tabela ESTADOS")
 
     CATEGORIAS_PRODUTO
-    ![Tabela CATEGORIAS_PRODUTO](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/categorias_produto.png?raw=true "Tabela CATEGORIAS_PRODUTO")
+![Tabela CATEGORIAS_PRODUTO](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/categorias_produto.png?raw=true "Tabela CATEGORIAS_PRODUTO")
 
     PROMOCOES_PRODUTOS
-    ![Tabela PROMOCOES_PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes_produtos.png?raw=true "Tabela PROMOCOES_PRODUTOS")
+![Tabela PROMOCOES_PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes_produtos.png?raw=true "Tabela PROMOCOES_PRODUTOS")
 
     PROMOCOES
-    ![Tabela PROMOCOES](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes.png?raw=true "Tabela PROMOCOES")
+![Tabela PROMOCOES](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes.png?raw=true "Tabela PROMOCOES")
 
     PAGAMENTOS
-    ![Tabela PAGAMENTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pagamentos.png?raw=true "Tabela PAGAMENTOS")
+![Tabela PAGAMENTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pagamentos.png?raw=true "Tabela PAGAMENTOS")
     
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
