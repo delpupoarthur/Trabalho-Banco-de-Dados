@@ -45,7 +45,7 @@ Criação da interface para identificar possíveis informações a serem armazen
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
     
-![Tabela de Dados](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/tabela_dados_sistema.csv?raw=true "Tabela de Dados")
+![Tabela de Dados](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/tabela_dados_sistema.xlsx?raw=true "Tabela de Dados")
     
     
 ### 5.MODELO CONCEITUAL<br>
