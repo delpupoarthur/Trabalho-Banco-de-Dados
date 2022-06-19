@@ -149,12 +149,16 @@ insert into enderecos (tipo_logradouro_id, logradouro, municipio_id, cep) values
 (1, 'Carlos Martins', 1, '29090060'),
 (1, 'Eurico Miranda', 1, '29090120'),
 (2, 'André Junior', 3, '29090292'),
-(3, 'Carlos Lindemberg', 4, '23940501');
+(3, 'Carlos Lindemberg', 4, '23940501'),
+(1, 'Salvador', 8, '40015-970'),
+(4, 'São Jorge', 5, '01311-000');
 
 insert into pessoas (nome, cpf, data_nascimento, email, endereco_id) values
 ('Luiz Eduardo', '123456789', '2000-09-29', 'luizeduardo@email.com', 1),
 ('João Victor', '234567891', '1998-04-09', 'joaovictor@email.com', 2),
-('Amanda Nunes', '345678912', '1997-02-19', 'amandanunes@email.com', 3);
+('Amanda Nunes', '345678912', '1997-02-19', 'amandanunes@email.com', 3),
+('Carlos Eduardo', '456789123', '1980-07-30', 'carloseduardo@email.com', 5),
+('Lucas André', '567891234', '2000-05-18', 'lucasandre@email.com', 6);
 
 insert into categorias_produto (categoria) values
 ('Esporte'),
@@ -183,17 +187,25 @@ insert into pagamentos (chave_pix, total) values
 ('ff4983e12b10e8a56d72adda44db1bf2', 880.72),
 ('bdd0236b411808e8758fdc3c6a100aeb', 87.76),
 ('9eb3f68b1df55837553be41f5ffe5b20', 210.87),
-('ed564798cffe7f3bb00ad7fc092124b5', 1998.99);
+('ed564798cffe7f3bb00ad7fc092124b5', 1998.99),
+('d8c24e5c47d2b086ee5a355e4803d861', 10.97),
+('d5ed38fdbf28bc4e58be142cf5a17cf5', 5298.78);
 
 insert into vendas (pessoa_id, data, pagamento_id, endereco_id) values
 (1, '2022-05-25', 1, 1),
 (1, '2022-06-12', 2, 4),
 (3, '2022-06-15', 3, 3),
-(2, '2022-06-19', 4, 2);
+(2, '2022-06-19', 4, 2),
+(4, '2022-06-22', 5, 5),
+(5, '2022-07-01', 6, 6);
 
 insert into produtos_vendas (produto_id, venda_id, quantidade) values
 (3, 1, 1),
 (4, 2, 8),
 (2, 3, 1),
 (4, 3, 1),
-(1, 4, 1);
+(1, 4, 1),
+(4, 5, 1),
+(1, 6, 2),
+(1, 2, 1),
+(1, 3, 1);
