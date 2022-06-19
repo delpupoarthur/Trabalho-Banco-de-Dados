@@ -44,10 +44,8 @@ Criação da interface para identificar possíveis informações a serem armazen
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Tabela de Dados](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/tabela_dados_sistema.csv?raw=true "Tabela de Dados")
     
     
 ### 5.MODELO CONCEITUAL<br>
@@ -225,11 +223,7 @@ Criação da interface para identificar possíveis informações a serem armazen
         );
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+![Inserts com restauração](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/arquivos/restauracao.sql?raw=true "Inserts com restauração")
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
