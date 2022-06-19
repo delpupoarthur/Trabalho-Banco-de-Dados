@@ -257,7 +257,7 @@ Criação da interface para identificar possíveis informações a serem armazen
 ![Tabela CATEGORIAS_PRODUTO](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/categorias_produto.png?raw=true "Tabela CATEGORIAS_PRODUTO")
 
     PROMOCOES_PRODUTOS
-![Tabela PROMOCOES_PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes_produtos.png?raw=true "Tabela PROMOCOES_PRODUTOS")
+![Tabela PROMOCOES_PRODUTOS](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes_produto.png?raw=true "Tabela PROMOCOES_PRODUTOS")
 
     PROMOCOES
 ![Tabela PROMOCOES](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes.png?raw=true "Tabela PROMOCOES")
