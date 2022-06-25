@@ -27,6 +27,9 @@ tipo_logradouro_id int,
 logradouro varchar(255),
 municipio_id int,
 cep varchar(10),
+bairro varchar(255),
+numero varchar(255),
+complemento varchar(255),
 constraint fk_tipos_logradouro_enderecos
 foreign key (tipo_logradouro_id)
 references tipos_logradouro(id),
@@ -139,19 +142,19 @@ insert into municipios (nome, estado_id) values
 ('Serra', 1),
 ('Cariacica', 1),
 ('Rio de Janeiro', 2),
-('Botafogo', 2),
+('Zona Sul', 2),
 ('São Paulo', 3),
 ('Belo Horizonte', 4),
 ('Salvador', 5),
 ('Arraial da Ajuda', 5);
 
-insert into enderecos (tipo_logradouro_id, logradouro, municipio_id, cep) values
-(1, 'Carlos Martins', 1, '29090060'),
-(1, 'Eurico Miranda', 1, '29090120'),
-(2, 'André Junior', 3, '29090292'),
-(3, 'Carlos Lindemberg', 4, '23940501'),
-(1, 'Salvador', 8, '40015-970'),
-(4, 'São Jorge', 5, '01311-000');
+insert into enderecos (tipo_logradouro_id, logradouro, municipio_id, cep, bairro, numero, complemento) values
+(1, 'Carlos Martins', 1, '29090060', 'Jardim Camburi', '257', 'Na rua da padaria São João'),
+(1, 'Eurico Miranda', 1, '29090120', 'Praia do Canto', '37', 'Próximo ao churrasquinho do Alemão'),
+(2, 'André Junior', 3, '29090292', 'Jacaraípe', '157', 'Do lado do bar do seu Manel'),
+(3, 'Carlos Lindemberg', 4, '23940501', 'Santana', '41', 'Subindo o morro do terminal'),
+(1, 'Salvador', 8, '40015-970', 'Nazaré', '1024', 'Perto da sede do Olodum'),
+(4, 'São Jorge', 5, '01311-000', 'Botafogo', '171', 'Do lado do supermercado Pão de Açúcar');
 
 insert into pessoas (nome, cpf, data_nascimento, email, endereco_id) values
 ('Luiz Eduardo', '123456789', '2000-09-29', 'luizeduardo@email.com', 1),
