@@ -95,6 +95,9 @@ Criação da interface para identificar possíveis informações a serem armazen
     id:  Campo que armazena o código de identificação sobre o endereço do cliente.
     logradouro:  Campo que armazena o logradouro do endereço do cliente.
     cep:  Campo que armazena o cep do endereço do cliente.
+    bairro:  Campo que armazena o bairro do endereço do cliente.
+    numero:  Campo que armazena o numero do endereço do cliente.
+    complemento:  Campo que armazena o complemento do endereço do cliente.
     
     TIPO_LOGRADOURO: Tabela que armazena as informações sobre os tipos de logradouro.
     id:  Campo que armazena o código de identificação do tipo de logradouro.
@@ -139,7 +142,10 @@ Criação da interface para identificar possíveis informações a serem armazen
         tipo_logradouro_id int,
         logradouro varchar(255),
         municipio_id int,
-        cep varchar(10),
+        cep varchar(10),            
+        bairro varchar(255),
+        numero varchar(255),
+        complemento varchar(255),
         constraint fk_tipos_logradouro_enderecos
         foreign key (tipo_logradouro_id)
         references tipos_logradouro(id),
