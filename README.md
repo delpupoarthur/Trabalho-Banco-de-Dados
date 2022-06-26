@@ -15,7 +15,7 @@ Guilherme Bleidão : guilhermenbleidao@gmail.com<br>
 Este documento contém a especificação do projeto do banco de dados Moveis Eletro 
 <br>e motivação da escolha realizada. <br>
 
-> O sistema da loja "Móveis e Eletro” almeja auxiliar a organização das atividades diárias da loja e abrir as portas da empresa para o mercado digital (compras feitas pela internet). Dessa forma, os clientes terão acesso a compra de produtos sem ter que se deslocar até uma loja física recebendo o produto na comodidade de sua casa. O sistema servirá como facilitador para as atividades exercidas pelos funcionários da loja física, unificando as operações em um só lugar.
+> O sistema da loja "Móveis e Eletro”deseja abrir as portas da empresa para o mercado digital (compras feitas pela internet). O sistema servirá como facilitador para as atividades exercidas pelos funcionários da loja física, unificando as operações em um só lugar.
  
 <hr>
 
@@ -23,8 +23,8 @@ Este documento contém a especificação do projeto do banco de dados Moveis Ele
 <br>
 
 > A loja “Móveis e Eletro” atualmente comercializa móveis e eletrodomésticos e trabalha com o objetivo de proporcionar serviços àqueles que sonham em ter a casa mobiliada com produtos de qualidade e de boa procedência. A loja deseja obter um sistema que auxilie seus processos internos, tais como o processo de vendas e entregas. 
-A loja trabalha com dois tipos de venda: por meio de vendas físicas ou por meio de compras online. A cobertura de entregas da loja é nacional. O sistema deve possuir carrinhos de compra. Para realizar uma compra, os clientes devem informar seu nome, CPF, telefone, email e endereço. O sistema deve enviar emails para seus clientes sempre que acontecerem promoções, visando manter seu público atualizado. O sistema deve registrar os horários de entrada e saída de cada vendedor. Para conseguir cumprir os prazos de entrega a empresa possui frota própria de entregadores. O prazo de entrega varia dependendo da localidade do comprador. A loja necessita que os produtos sejam contabilizados. Sempre que os produtos estiverem próximos de se esgotar, um alerta deve ser enviado, bem como os fornecedores devem ser contactados. Assim que a encomenda for despachada, o entregador deve gerar um código de rastreio para facilitar seu acompanhamento. A loja tem apoio de um software externo, onde mostra a visualização dos móveis selecionados pelo cliente no seu cômodo desejado. 
-O pagamento é feito por meio de cédulas, PIX ou carteiras virtuais (PicPay e PayPal), além disso, os vendedores podem aplicar desconto de 15% se o cliente comprar 3 itens ou mais. O vendedor recebe uma comissão de 5% em cima da quantidade total vendida por ele no mês. É importante que seja possível acessar os seguintes relatórios: O total de vendas por período especificado, o valor de venda realizado por cada vendedor, o banco de horas de cada funcionário e a rota de entrega dos entregadores.
+A loja trabalha com dois tipos de venda: por meio de vendas físicas ou por meio de compras online. Para realizar uma compra, os clientes devem informar seu nome, CPF, telefone, email e endereço. Para conseguir cumprir os prazos de entrega a empresa possui frota própria de entregadores. A loja necessita que os produtos sejam contabilizados. A loja tem apoio de um software externo, onde mostra a visualização dos móveis selecionados pelo cliente no seu cômodo desejado. 
+O pagamento é feito por meio de PIX, além disso, os vendedores podem aplicar desconto de 15% se o cliente comprar 3 itens ou mais. É importante que seja possível acessar os seguintes relatórios: O total de vendas por período especificado, o valor de venda realizado por cada vendedor, o banco de horas de cada funcionário e a rota de entrega dos entregadores.
 
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
@@ -36,10 +36,9 @@ Criação da interface para identificar possíveis informações a serem armazen
     
  A Empresa Móveis e Eletro precisa inicialmente dos seguintes relatórios:
 * Relatório que mostre cada cliente, produtos que comprou.
-* Relatório que mostre todos os endereços de entrega.
 * Relatório que mostre as vendas e pagamentos realizadas em uma data.
 * Relatório que mostre todos os produtos em estoque.
-* Relatório que mostre todos os produtos em promoção, o desconto e o periodo da promoção.
+* Relatório que mostre todos os produtos em promoção.
 
  
  
@@ -49,7 +48,7 @@ Criação da interface para identificar possíveis informações a serem armazen
     
     
 ### 5.MODELO CONCEITUAL<br>
-![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/Conceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/conceitual.png?raw=true "Modelo Conceitual")
     
         
     
@@ -96,6 +95,9 @@ Criação da interface para identificar possíveis informações a serem armazen
     id:  Campo que armazena o código de identificação sobre o endereço do cliente.
     logradouro:  Campo que armazena o logradouro do endereço do cliente.
     cep:  Campo que armazena o cep do endereço do cliente.
+    bairro:  Campo que armazena o bairro do endereço do cliente.
+    numero:  Campo que armazena o numero do endereço do cliente.
+    complemento:  Campo que armazena o complemento do endereço do cliente.
     
     TIPO_LOGRADOURO: Tabela que armazena as informações sobre os tipos de logradouro.
     id:  Campo que armazena o código de identificação do tipo de logradouro.
@@ -140,7 +142,10 @@ Criação da interface para identificar possíveis informações a serem armazen
         tipo_logradouro_id int,
         logradouro varchar(255),
         municipio_id int,
-        cep varchar(10),
+        cep varchar(10),            
+        bairro varchar(255),
+        numero varchar(255),
+        complemento varchar(255),
         constraint fk_tipos_logradouro_enderecos
         foreign key (tipo_logradouro_id)
         references tipos_logradouro(id),
