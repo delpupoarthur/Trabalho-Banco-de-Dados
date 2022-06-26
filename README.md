@@ -270,8 +270,56 @@ Criação da interface para identificar possíveis informações a serem armazen
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
+
+        select * from produtos
+        where preco > 100 and preco < 1000
+![Produtos com preco entre 100 e 1000](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_com_preco_entre_100_e_1000.png?raw=true "Produtos com preco entre 100 e 1000")
+
+        select a.* from pessoas a
+        join enderecos b on b.id = a.endereco_id
+        join municipios c on c.id = b.municipio_id
+        where c.nome = 'Vitória' or c.nome = 'Cariacica'
+![Pessoas de Vitória ou Cariacica](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_de_vitoria_ou_cariacica.png?raw=true "Pessoas de Vitória ou Cariacica")
+
+        select * from pessoas
+        where endereco_id is not null
+![Pessoas com endereço](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_com_endereco.png?raw=true "Pessoas com endereço")
+
+        select * from pessoas
+        where data_nascimento < '2000-01-01' and data_nascimento > '1990-01-01'
+![Pessoas nascidas entre 1990 e 2000](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_nascidas_entre_1990_e_2000.png?raw=true "Pessoas nascidas entre 1990 e 2000")
+
+        select * from vendas
+        where data > '2022-06-01' and data < '2022-06-30'
+![Vendas no mês de Maio](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas_no_mes_de_maio.png?raw=true "Vendas no mês de Maio")
+
+    b) Criar no mínimo 3 consultas com operadores aritméticos
+
+        select * from pessoas
+        where data_nascimento > '2000-01-01'
+![Pessoas nascidas depois de 2000](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_nascidas_depois_de_2000.png?raw=true "Pessoas nascidas depois de 2000")
+
+        select * from produtos
+        where preco < 1000.00
+![Produtos com preco menor que 1000](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_com_preco_menor_que_1000.png?raw=true "Produtos com preco menor que 1000")
+
+        select * from promocoes
+        where desconto > 0.1
+![Promocoes maior que 10 porcento de desconto](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocoes_maior_que_10_porcento_de_desconto.png?raw=true "Promocoes maior que 10 porcento de desconto")
+
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+
+        alter table pessoas
+        rename column cpf to documento
+![Pessoas rename cpf to documento](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_rename_cpf_to_documento.png?raw=true "Pessoas rename cpf to documento")
+
+        alter table vendas rename to transacoes
+![Vendas rename to transacoes](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas_rename_to_transacoes.png?raw=true "Vendas rename to transacoes")
+
+        alter table produtos
+        rename column descricao to detalhes
+![Vendas rename to transacoes](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas_rename_to_transacoes.png?raw=true "Vendas rename to transacoes")
+
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike

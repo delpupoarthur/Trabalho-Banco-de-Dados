@@ -118,7 +118,7 @@ references produtos(id),
 constraint fk_vendas_produtos_vendas
 foreign key (venda_id)
 references vendas(id)
-);
+);  
 
 -- Inserções
 insert into tipos_logradouro (tipo) values
