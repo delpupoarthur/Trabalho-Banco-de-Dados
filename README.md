@@ -273,6 +273,12 @@ Criação da interface para identificar possíveis informações a serem armazen
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+    a) select * from vendas where pagamento_id=1
+    b) select nome,data_inicio from promocoes where id=1
+    c) select id,nome,quantidade from produtos where preco>1000.0
+    d) select id, nome from municipios where estado_id=1 
+![Imagem 1 filtros where](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/where1.png?raw=true)
+![Imagem 2 filtros where](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/where2.png?raw=true)
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 
@@ -328,7 +334,38 @@ Criação da interface para identificar possíveis informações a serem armazen
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
+    select * from pessoas where cpf like '%45%'
+    
+    select cep from enderecos where cep like '29%'
+    
+    select * from municipios where nome like '%o'
+    
+    select * from produtos where nome ilike '%ca%'
+    
+    select * from pessoas where nome like 'Lu%'
+    
+    select * from municipios where nome ilike 'pa'
+    
+    select * from pessoas where nome ilike '&a%'
+![fotolike1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like1.png?raw=true)
+![fotolike2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like2.png?raw=true)
+![fotolike3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like3.png?raw=true)<br>
+
     b) Criar uma consulta para cada tipo de função data apresentada.
+    select nome, current_date - data_inicio from promocoes
+   ![data1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/data1.png?raw=true)
+   
+    select nome, current_date as data_atual, data_nascimento, (age(current_date,data_nascimento) )from pessoas
+   ![data2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/data2.png?raw=true)
+   
+    select nome, current_date as data_atual, data_inicio, date_part('month',age(current_date,data_inicio) ) as data from promocoes
+   ![data3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/data3.png?raw=true)
+   
+    select nome, (extract('year'from data_nascimento )) as ano_nasc from pessoas
+   ![data4](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/data4.png?raw=true)
+   
+    select nome, current_date as data_atual, data_fim, date_part('month',(age(current_date,data_fim))) as vencimentoPromocao from promocoes
+   ![data5](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/data5.png?raw=true)
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
@@ -408,13 +445,48 @@ Criação da interface para identificar possíveis informações a serem armazen
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
+    SELECT estado_id,count(estado_id) FROM municipios GROUP BY estado_id ORDER BY estado_id
+    
+    SELECT id,total AS pagamento FROM pagamentos GROUP BY id HAVING total > 500 ORDER BY id
+    
+    SELECT sum(total) AS pag_total, MAX(total) AS pag_maior,MIN(total) AS pag_menor FROM pagamentos
+    
+    SELECT avg(quantidade) AS media_vendas FROM produtos_vendas
+    
+    SELECT pessoa_id,count(pessoa_id) AS numero_vendas FROM vendas GROUP BY pessoa_id ORDER BY pessoa_id
+    
+    SELECT id, nome,descricao, quantidade FROM produtos GROUP BY id  HAVING quantidade < 50 ORDER BY id
+    
+   ![groupby1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/group1.png?raw=true)
+   ![groupby2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/group2.png?raw=true)
+   ![groupby3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/group3.png?raw=true)
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
-
+    SELECT categorias_produto.id,categoria,produtos.nome AS nome,produtos.descricao AS descricao FROM categorias_produto LEFT OUTER JOIN produtos ON     (produtos.categoria_id = categorias_produto.id
+    
+    SELECT nome, endereco_id,enderecos.cep,enderecos.id FROM pessoas RIGHT OUTER JOIN enderecos ON (pessoas.endereco_id = enderecos.id
+    
+    SELECT * FROM  promocoes_produtos FULL OUTER JOIN promocoes ON promocoes_produtos.promocao_id = promocoes.id
+    
+    SELECT * FROM produtos FULL OUTER JOIN produtos_vendas ON (produtos.id = produtos_vendas.produto_id)
+   ![join1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/join1.png?raw=true)
+   ![join2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/join2.png?raw=true)
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+        CREATE VIEW nome_email_pessoa AS SELECT nome,email FROM pessoas
+        
+        CREATE VIEW produto_estoque AS SELECT nome,preco,quantidade FROM produto
+        
+        CREATE VIEW pessoa_venda AS SELECT pessoa_id,pessoas.nome,vendas.data,pagamento_id FROM vendas INNER JOIN pessoas ON (vendas.pessoa_id = pessoas.id)
+        
+        CREATE VIEW nome_cpf_pessoa AS SELECT nome,cpf FROM pessoas
+        
+        CREATE VIEW nome_promocao AS SELECT nome,desconto FROM promocoes
+        
+        CREATE VIEW nome_cep_pessoa AS SELECT nome,enderecos.cep FROM pessoas INNER JOIN enderecos ON (pessoas.endereco_id = enderecos.id)
+        
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
     a) Criar minimo 1 envolvendo GROUP BY
