@@ -348,7 +348,7 @@ Criação da interface para identificar possíveis informações a serem armazen
     
     select * from pessoas where nome ilike '&a%'
 ![fotolike1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like1.png?raw=true)
-![fotolike2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like2.png?raw=true)
+![fotolike2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/like1.png?raw=true)
 ![fotolike3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/ilike1.png?raw=true)
 ![fotolike4](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/ilike2.png?raw=true)
 ![fotolike5](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/ilike3.png?raw=true)<br>
