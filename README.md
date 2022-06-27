@@ -332,11 +332,79 @@ Criação da interface para identificar possíveis informações a serem armazen
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
+
+        delete from categorias_produto
+        where id not in (select categoria_id from produtos)
+
+        delete from produtos where id not in (select produto_id from promocoes_produtos)
+
+        delete from produtos where categoria_id is null
+
     b) Criar minimo 3 de atualização
+
+        update enderecos set numero = '270' where id = (
+        select endereco_id from pessoas where cpf = '123456798')
+
+        update produtos set descricao = 'Aro 20, pneu slick' where id = 1
+
+        update pessoas set email = 'outroemail@email.com' where cpf = '456789123'
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+
+        select
+            b.nome,
+            c.chave_pix,
+            j.nome as estado,
+            i.nome as cidade,
+            d.bairro,
+            d.cep,
+            h.tipo as tipo_logradouro,
+            d.logradouro,
+            d.numero,
+            f.nome as produto
+        from vendas a
+        join pessoas b on b.id = a.pessoa_id
+        join pagamentos c on c.id = a.pagamento_id
+        join enderecos d on d.id = a.endereco_id 
+        join produtos_vendas e on e.venda_id = a.id
+        join produtos f on f.id = e.produto_id
+        join categorias_produto g on g.id = f.categoria_id
+        join tipos_logradouro h on h.id = d.tipo_logradouro_id
+        join municipios i on i.id = d.municipio_id
+        join estados j on j.id = i.estado_id
+        join promocoes_produtos k on k.produto_id = f.id
+        join promocoes l on l.id = k.promocao_id
+        where j.nome = 'Espírito Santo'
+![Todas tabelas](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/todas_tabelas.png?raw=true "Todas tabelas")
+
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+        select c.nome, c.preco from promocoes a
+        join promocoes_produtos b on b.promocao_id = a.id
+        join produtos c on c.id = b.produto_id
+        where a.nome = 'Dia do Orgulho Nerd'
+![Dia do Orgulho Nerd](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/dia_do_orgulho_nerd.png?raw=true "Dia do Orgulho Nerd")
+
+        select * from pessoas order by nome
+![Pessoas ordenadas nome](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_ordenadas_nome.png?raw=true "Pessoas ordenadas nome")
+
+        select * from produtos order by preco
+![Produtos ordenados preco](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_ordenados_preco.png?raw=true "Produtos ordenados preco")
+
+        select
+            a.nome,
+            a.descricao,
+            a.preco,
+            a.quantidade
+        from produtos a
+        join categorias_produto b on b.id = a.categoria_id
+        where b.categoria = 'Esporte'
+![Produtos esporte](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_esporte.png?raw=true "Produtos esporte")
+
+        select * from pagamentos order by total
+![Pagamentos ordenador total](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pagamentos_ordenados_total.png?raw=true "Pagamentos ordenador total")
+
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
@@ -349,8 +417,40 @@ Criação da interface para identificar possíveis informações a serem armazen
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+    a) Criar minimo 1 envolvendo GROUP BY
+     
+        select * from enderecos
+        where municipio_id in (
+            select id from municipios
+            where nome = 'Vitória'
+        )
+![Endereços vitória](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/enderecos_vitoria.png?raw=true "Endereços vitória")
+
+            select nome from municipios
+        where estado_id = (
+            select id from estados
+            where nome = 'Espírito Santo'
+        )
+![Municipios espírito santo](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/municipios_espirito_santo.png?raw=true "Municipios espírito santo")
+
+    b) Criar minimo 1 envolvendo algum tipo de junção
+
+    select count(*), b.chave_pix from vendas a
+    join pagamentos b on b.id = a.pagamento_id
+    where pessoa_id in (
+        select id from pessoas
+        where nome = 'Luiz Eduardo'
+    )
+    group by b.chave_pix
+![Chaves pix Luiz Eduardo](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/chaves_pix_luiz_eduardo.png?raw=true "Chaves pix Luiz Eduardo")
+
+    select a.nome from produtos a
+    join promocoes_produtos b on b.produto_id = a.id
+    join promocoes c on c.id = b.promocao_id
+    where a.id in (select produto_id from vendas)
+![Produtos vendidos](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_vendidos.png?raw=true "Produtos vendidos")
+
+
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
