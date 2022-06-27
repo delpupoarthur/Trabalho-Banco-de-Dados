@@ -384,7 +384,7 @@ Criação da interface para identificar possíveis informações a serem armazen
         join promocoes_produtos b on b.promocao_id = a.id
         join produtos c on c.id = b.produto_id
         where a.nome = 'Dia do Orgulho Nerd'
-![Dia do Orgulho Nerd](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/dia_do_orgulho_nerd.png?raw=true "Dia do Orgulho Nerd")
+![Dia do Orgulho Nerd](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_dia_orgulho_nerd.png?raw=true "Dia do Orgulho Nerd")
 
         select * from pessoas order by nome
 ![Pessoas ordenadas nome](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_ordenadas_nome.png?raw=true "Pessoas ordenadas nome")
