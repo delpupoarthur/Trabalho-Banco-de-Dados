@@ -112,7 +112,7 @@ Criação da interface para identificar possíveis informações a serem armazen
     nome:  Campo que armazena o nome do estado.
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/Logico.png?raw=true "Modelo Logico")
+![Alt text](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/modelo_logico.png?raw=true "Modelo Logico")
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
@@ -329,7 +329,7 @@ Criação da interface para identificar possíveis informações a serem armazen
 
         alter table produtos
         rename column descricao to detalhes
-![Vendas rename to transacoes](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/vendas_rename_to_transacoes.png?raw=true "Vendas rename to transacoes")
+![Produtos rename descricao to detalhes](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_rename_descricao_to_detalhes.png?raw=true "Produtos rename descricao to detalhes")
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
@@ -415,6 +415,7 @@ Criação da interface para identificar possíveis informações a serem armazen
         join promocoes_produtos k on k.produto_id = f.id
         join promocoes l on l.id = k.promocao_id
         where j.nome = 'Espírito Santo'
+        order by b.nome
 ![Todas tabelas](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/todas_tabelas.png?raw=true "Todas tabelas")
 
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
@@ -423,13 +424,20 @@ Criação da interface para identificar possíveis informações a serem armazen
         join promocoes_produtos b on b.promocao_id = a.id
         join produtos c on c.id = b.produto_id
         where a.nome = 'Dia do Orgulho Nerd'
-![Dia do Orgulho Nerd](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocao_dia_do_orgulho_nerd.png?raw=true "Dia do Orgulho Nerd")
+        order by c.preco
+![Dia do Orgulho Nerd](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/promocao_dia_do_orgulho_nerd_ordenada_preco.png?raw=true "Dia do Orgulho Nerd")
 
-        select * from pessoas order by nome
-![Pessoas ordenadas nome](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_ordenadas_nome.png?raw=true "Pessoas ordenadas nome")
+        select *
+        from pessoas a
+        join enderecos b on b.id = a.endereco_id
+        order by a.nome
+![Pessoas enderecos ordenadas nome](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pessoas_enderecos_ordenadas_nome.png?raw=true "Pessoas ordenadas nome")
 
-        select * from produtos order by preco
-![Produtos ordenados preco](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_ordenados_preco.png?raw=true "Produtos ordenados preco")
+        select a.nome, b.quantidade, c.data from produtos a
+        join produtos_vendas b on b.produto_id = a.id
+        join vendas c on c.id = b.venda_id
+        order by data
+![Produtos vendas ordenados preco](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_vendas_ordenados_preco.png?raw=true "Produtos ordenados preco")
 
         select
             a.nome,
@@ -439,10 +447,13 @@ Criação da interface para identificar possíveis informações a serem armazen
         from produtos a
         join categorias_produto b on b.id = a.categoria_id
         where b.categoria = 'Esporte'
-![Produtos esporte](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_esporte.png?raw=true "Produtos esporte")
+        order by a.nome
+![Produtos esporte ordenados nome](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/produtos_esporte_ordenados_nome.png?raw=true "Produtos esporte")
 
-        select * from pagamentos order by total
-![Pagamentos ordenador total](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pagamentos_ordenados_total.png?raw=true "Pagamentos ordenador total")
+        select a.chave_pix, b.data from pagamentos a
+        join vendas b on b.pagamento_id = a.id
+        order by data
+![Pagamentos vendas ordenados total](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/pagamentos_vendas_ordenados_total.png?raw=true "Pagamentos vendas ordenados total")
 
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
