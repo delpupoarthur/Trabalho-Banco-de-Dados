@@ -483,8 +483,11 @@ Criação da interface para identificar possíveis informações a serem armazen
     SELECT * FROM  promocoes_produtos FULL OUTER JOIN promocoes ON promocoes_produtos.promocao_id = promocoes.id
     
     SELECT * FROM produtos FULL OUTER JOIN produtos_vendas ON (produtos.id = produtos_vendas.produto_id)
-   ![join1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/join1.png?raw=true)
-   ![join2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/join2.png?raw=true)
+   ![join1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/leftjoin.png?raw=true)
+   ![join2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/rightjoin.png?raw=true)
+   ![join3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/fulljoin1.png?raw=true)
+   ![join4](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/fulljoin2.png?raw=true)
+   
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
