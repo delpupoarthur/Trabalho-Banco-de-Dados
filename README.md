@@ -39,6 +39,7 @@ Criação da interface para identificar possíveis informações a serem armazen
 * Relatório que mostre as vendas e pagamentos realizadas em uma data.
 * Relatório que mostre todos os produtos em estoque.
 * Relatório que mostre todos os produtos em promoção.
+* Relatório que mostre o produto mais vendido.
 
  
  
