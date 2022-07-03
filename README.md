@@ -494,7 +494,7 @@ Criação da interface para identificar possíveis informações a serem armazen
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
         CREATE VIEW nome_email_pessoa AS SELECT nome,email FROM pessoas
         
-        CREATE VIEW produto_estoque AS SELECT nome,preco,quantidade FROM produto
+        CREATE VIEW produto_estoque AS SELECT nome,preco,quantidade FROM produtos
         
         CREATE VIEW pessoa_venda AS SELECT pessoa_id,pessoas.nome,vendas.data,pagamento_id FROM vendas INNER JOIN pessoas ON (vendas.pessoa_id = pessoas.id)
         
