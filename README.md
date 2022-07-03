@@ -36,7 +36,7 @@ Criação da interface para identificar possíveis informações a serem armazen
     
  A Empresa Móveis e Eletro precisa inicialmente dos seguintes relatórios:
 * Relatório que mostre cada cliente e a quantidade de vezes que realizou uma compra.
-* Relatório que mostre as vendas e pagamentos realizadas em uma data.
+* Relatório que mostre as vendas realizadas em uma data.
 * Relatório que mostre todos os produtos em estoque.
 * Relatório que mostre todos os produtos em promoção.
 * Relatório que mostre os produtos na ordem dos mais vendido.
