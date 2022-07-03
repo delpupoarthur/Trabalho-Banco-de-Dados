@@ -546,6 +546,23 @@ Criação da interface para identificar possíveis informações a serem armazen
 ### 10 RELATÓRIOS E GRÁFICOS
 
 #### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
+
+* Quantidade de compras realizadas por um cliente.
+
+ ![graficoRelatorio1](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/graficoRelatorio1.png?raw=true)
+* Vendas realizadas em uma data.
+
+![graficoRelatorio2](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/graficoRelatorio2.png?raw=true)
+* Todos os produtos em estoque.
+
+![graficoRelatorio3](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/graficoRelatorio3.png?raw=true)
+* Todos os produtos em promoção.
+
+![graficoRelatorio4](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/graficoRelatorio4.png?raw=true)
+* Produtos mais vendido.
+
+![graficoRelatorio5](https://github.com/delpupoarthur/Trabalho-Banco-de-Dados/blob/master/images/graficoRelatorio5.png?raw=true)
+
 #### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
 #### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
 
